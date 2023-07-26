@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-25T05:50:33.253Z",
+    "end": "2023-07-25T05:50:45.994Z",
+    "duration": 12741,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5339e2f1-bed2-4168-a37a-124497ddb525",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cssLocator.cy.js",
+      "file": "cypress\\e2e\\cssLocator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a51ef211-1eff-447f-a022-32b05aea27f4",
+          "title": "My new  cy proj",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verify the title",
+              "fullTitle": "My new  cy proj verify the title",
+              "timedOut": null,
+              "duration": 8267,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\cssLocator.cy.js\"\n}",
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.title().should('eq', 'Swag Labs');\ncy.get('#user-name').type('standard_user');\ncy.get(\"#password\").type('secret_sauce');\ncy.get(\"[type='submit']\").click();\n//wait for new page\n//cy.url().should('include', 'https://www.saucedemo.com/inventory.html');\n//validate \ncy.contains('Products').should('be.visible');\n//add a item 1\ncy.get('#add-to-cart-sauce-labs-backpack').click();\n//add a item 2\ncy.get('#add-to-cart-sauce-labs-bike-light').click();\n//select cart \ncy.get('.shopping_cart_link').click();\n//validate cart page\ncy.contains('Your Cart').should('be.visible');\n//check oue selected items cart_list\ncy.get('.cart_item').should('have.length', 2);\n//remove item\ncy.get('#remove-sauce-labs-bike-light').click();\n//check the removed item is invisible from the list\ncy.get('.cart_item').should('have.length', 1);\n//click on checkout btn\ncy.get('#checkout').click();\n//validate the checkout page\ncy.contains('Checkout: Your Information').should('be.visible');\ncy.get('#first-name').type('Ashani');\ncy.get('#last-name').type('Maleesha');\ncy.get('#postal-code').type(12530);\n//click on continue\ncy.get('#continue').click();\n//validate overview page\ncy.contains('Checkout: Overview').should('be.visible');\ncy.contains('Payment Information').should('be.visible');\ncy.contains('Shipping Information').should('be.visible');\ncy.contains('Price Total').should('be.visible');\ncy.contains('Total').should('be.visible');\n//click on finish button\ncy.get('#finish').click();\n//checkout complete\ncy.contains('Checkout: Complete!').should('be.visible');\ncy.contains('Thank you for your order!').should('be.visible');",
+              "err": {},
+              "uuid": "ef5ea1a2-6677-4a07-8e2f-08ae80aa8366",
+              "parentUUID": "a51ef211-1eff-447f-a022-32b05aea27f4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ef5ea1a2-6677-4a07-8e2f-08ae80aa8366"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8267,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

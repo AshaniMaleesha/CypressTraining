@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-25T05:50:07.425Z",
+    "end": "2023-07-25T05:50:24.449Z",
+    "duration": 17024,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b4c38628-08ec-40cf-a00d-8c97dc384c46",
+      "title": "",
+      "fullFile": "cypress\\e2e\\captureSSVideos.cy.js",
+      "file": "cypress\\e2e\\captureSSVideos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73c44f5a-8199-4be6-b048-bfc6ab11cdbe",
+          "title": "test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "take ss & videos",
+              "fullTitle": "test suite take ss & videos",
+              "timedOut": null,
+              "duration": 12584,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\captureSSVideos.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\captureSSVideos.cy.js\\\\test suite -- take ss & videos (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('https://demo.opencart.com/');\n/*cy.screenshot('homePage');\ncy.wait(5000)\ncy.get(\".btn.btn-inverse.btn-block.dropdown-toggle\").screenshot('logo');\ncy.wait(5000)*/\n//automatically get ss&videos when our test fail-this happen only we execute test using CLI OR TERMINAL\ncy.get(':nth-child(7) > .nav-link').click();\ncy.get(\"div[id='content'] h2\").contains('Tablets');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Tablets' within the element: <h2> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Tablets' within the element: <h2> but never did.\n    at Context.eval (webpack:///./cypress/e2e/captureSSVideos.cy.js:13:39)",
+                "diff": null
+              },
+              "uuid": "3f4b0230-7482-48c2-ad7f-60dd12bdb48c",
+              "parentUUID": "73c44f5a-8199-4be6-b048-bfc6ab11cdbe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3f4b0230-7482-48c2-ad7f-60dd12bdb48c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12584,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

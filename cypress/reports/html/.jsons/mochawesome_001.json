@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-25T05:48:56.602Z",
+    "end": "2023-07-25T05:49:22.761Z",
+    "duration": 26159,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "507e8870-491f-40ad-bd1f-0b7b43401808",
+      "title": "",
+      "fullFile": "cypress\\e2e\\assertionsExplicit.cy.js",
+      "file": "cypress\\e2e\\assertionsExplicit.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "089ca45a-37f2-421f-908d-76fa8d28088f",
+          "title": "my nre seertion",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "explixit",
+              "fullTitle": "my nre seertion explixit",
+              "timedOut": null,
+              "duration": 19381,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\assertionsExplicit.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\assertionsExplicit.cy.js\\\\my nre seertion -- explixit (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/');\ncy.get(\"input[placeholder='Username']\").type('Admin');\ncy.get(\"input[placeholder='Password']\").type('admin123');\ncy.get(\"button[type='submit']\").click();\nlet expName = \"abcd\";\ncy.get('.oxd-userdropdown-name').then(x => {\n  let actName = x.text();\n  //BDD style\n  expect(actName).to.equal(expName);\n  expect(actName).to.not.equal(expName);\n  //TDD Style\n  assert.equal(actName, expName);\n  assert.notEqual(actName, expName);\n});",
+              "err": {
+                "message": "AssertionError: expected 'zeeshan shaikh' to equal 'abcd'",
+                "estack": "AssertionError: expected 'zeeshan shaikh' to equal 'abcd'\n    at Context.eval (webpack:///./cypress/e2e/assertionsExplicit.cy.js:19:27)",
+                "diff": "- 'zeeshan shaikh'\n+ 'abcd'\n"
+              },
+              "uuid": "c38ff3a4-3bc6-47db-a474-06272f6005fc",
+              "parentUUID": "089ca45a-37f2-421f-908d-76fa8d28088f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c38ff3a4-3bc6-47db-a474-06272f6005fc"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 19381,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

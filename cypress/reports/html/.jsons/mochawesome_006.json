@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-25T05:52:25.342Z",
+    "end": "2023-07-25T05:53:09.450Z",
+    "duration": 44108,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5177c533-ea13-4a6c-a213-11de076d8f3d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\DataDrivenTest.cy.js",
+      "file": "cypress\\e2e\\DataDrivenTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe452af4-d15f-44b2-84f6-4b51240a570f",
+          "title": "my test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "DataDriven Test",
+              "fullTitle": "my test suite DataDriven Test",
+              "timedOut": null,
+              "duration": 37865,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\DataDrivenTest.cy.js\"\n}",
+              "code": "cy.fixture('orangeHRM2.json').then(data => {\n  cy.visit('https://opensource-demo.orangehrmlive.com/');\n  data.forEach(userdata => {\n    cy.get(\"input[placeholder='Username']\").type(userdata.username);\n    cy.get(\"input[placeholder='Password']\").type(userdata.password);\n    cy.get(\"button[type='submit']\").click();\n    if (userdata.username == 'Admin' && userdata.password == 'admin123') {\n      cy.get('.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module').should('have.text', userdata.expexted);\n      cy.wait(4000);\n      cy.get('.oxd-userdropdown-tab > .oxd-icon').click(); //logout\n      cy.get(':nth-child(4) > .oxd-userdropdown-link').click(); //logout\n    } else {\n      cy.get('.oxd-text.oxd-text--p.oxd-alert-content-text').should('have.text', userdata.expexted);\n      cy.wait(4000);\n    }\n  });\n});",
+              "err": {},
+              "uuid": "84f78b17-f66f-45e9-8b76-ec1c4c0e57bc",
+              "parentUUID": "fe452af4-d15f-44b2-84f6-4b51240a570f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "84f78b17-f66f-45e9-8b76-ec1c4c0e57bc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37865,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
